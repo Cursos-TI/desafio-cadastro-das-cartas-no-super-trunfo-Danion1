@@ -9,20 +9,9 @@
 int main() {
     
     //Define cada variavel para as duas cartas
-    char estado[20];
-    char estado2[20];
-    char cdcard[20];
-    char cdcard2[20];
-    char nomec[20];
-    char nomec2[20];
-    int populacao;
-    int populacao2;
-    int pturist;
-    int pturist2;
-    float area;
-    float area2;
-    float pib;
-    float pib2;
+    char estado[20], estado2[20], cdcard[20], cdcard2[20], nomec[20], nomec2[20];
+    int populacao, populacao2, pturist, pturist2;
+    float area, area2, pib, pib2;
 
     //colhe as informações da primeira carta utilizando as funções scanf e printf
     printf("Digite o estado da primeira carta(de A a H): ");
