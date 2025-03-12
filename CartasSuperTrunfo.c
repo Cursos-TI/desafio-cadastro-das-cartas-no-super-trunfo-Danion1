@@ -1,27 +1,20 @@
-#include <stdio.h>
+#include <stdio.h> //adiciona a biblioteca ao código para a entrada e saida de informações 
 
-// Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
-// Siga os comentários para implementar cada parte do desafio.
-//Teste larissa
-
-int main() {
-    
-    //Define cada variavel para as duas cartas
-    char estado[20], estado2[20], cdcard[20], cdcard2[20], nomec[20], nomec2[20];
+int main(){ //Cria o diretório onde vai se passar todo o código
+    //aplica as variaveis para as cartas
+    char estado[20], estado2[20], cdcard[20], cdcard2[20], nomec[20], nomec2[20]; 
     int populacao, populacao2, pturist, pturist2;
-    float area, area2, pib, pib2;
+    float area, area2, pib, pib2, pibpc, pibpc2, densidade, densidade2;
 
-    //colhe as informações da primeira carta utilizando as funções scanf e printf
+    //colhe as informações da primeira carta
     printf("Digite o estado da primeira carta(de A a H): ");
-    scanf(" %s", estado);
+    scanf("%s", estado);
     
     printf("Digite o código da carta finalizados com um número de 1 a 4(ex: A01, A04, Z03): ");
-    scanf(" %s", cdcard);
+    scanf("%s", cdcard);
     
     printf("Digite o nome da cidade: ");
-    scanf(" %s", nomec);
+    scanf("%s", nomec);
     
     printf("Digite a população da carta: ");
     scanf("%d", &populacao);
@@ -37,13 +30,13 @@ int main() {
 
     //colhe as informações da segunda carta
     printf("Digite o estado da Segunda carta(de A a H): ");
-    scanf(" %s", estado2);
+    scanf("%s", estado2);
     
     printf("Digite o código da carta finalizados com um número de 1 a 4(ex: A01, A04, Z03): ");
-    scanf(" %s", cdcard2);
+    scanf("%s", cdcard2);
     
     printf("Digite o nome da cidade: ");
-    scanf(" %s", nomec2);
+    scanf("%s", nomec2);
     
     printf("Digite a população da carta: ");
     scanf("%d", &populacao2);
@@ -57,6 +50,14 @@ int main() {
     printf("Digite o PIB da carta: ");
     scanf("%f", &pib2);
 
+
+    //Cálculo da pib per capita e da densidade populacional
+    pibpc = pib / populacao;
+    pibpc2 = pib2 / populacao2;
+    densidade = populacao / area;
+    densidade2 = populacao2 / area2;
+
+
     //transforma em texto todas as informações das cartas utilizando \n para pular linhas e seus especificadores
     printf("carta 1: \n");
     printf("Estado - %s\n", estado);                       
@@ -65,16 +66,20 @@ int main() {
     printf("População da cidade - %d\n", populacao);          
     printf("Pontos turisticos - %d\n", pturist);
     printf("Área(km2) - %.2f km2\n", area);                    
-    printf("PIB - %.2f Bilhões de reais\n", pib);                        
+    printf("PIB - %.2f Bilhões de reais\n", pib);           
+    printf("PIB per Capita - %.2f reais\n", pibpc);
+    printf("Densidade Populacional - %.2f habitantes/km2\n", densidade);             
 
     printf("carta 2: \n");
-    printf("Estado - %s\n", estado2);
+    printf("Estado - %s\n",estado2);
     printf("Código da carta - %s\n", cdcard2);
     printf("Nome da cidade - %s\n", nomec2);
     printf("População da Cidade - %d\n", populacao2);
     printf("Pontos turisticos - %d\n", pturist2);
     printf("Área(km2) - %.2f km2\n", area);
     printf("PIB - %.2f Bilhões de reais\n", pib2);
+    printf("PIB per Capita - %.2f reais\n", pibpc2);
+    printf("Densidade Populacional - %.2f habitantes/km2\n", densidade2);
 
-    return 0;
+    return 0; //sinalizar que o código foi finalizado com sucesso
 }
