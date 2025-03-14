@@ -1,10 +1,8 @@
-#include <stdio.h> //adiciona a biblioteca ao código para a entrada e saida de informações 
-
 int main(){ //Cria o diretório onde vai se passar todo o código
     //aplica as variaveis para as cartas
     char estado[20], estado2[20], cdcard[20], cdcard2[20], nomec[20], nomec2[20]; 
     int populacao, populacao2, pturist, pturist2;
-    float area, area2, pib, pib2, pibpc, pibpc2, densidade, densidade2;
+    float area, area2, pib, pib2, pibpc, pibpc2, densidade, densidade2, superpoder1, superpoder2, superpoder;
 
     //colhe as informações da primeira carta
     printf("Digite o estado da primeira carta(de A a H): ");
@@ -57,6 +55,10 @@ int main(){ //Cria o diretório onde vai se passar todo o código
     densidade = populacao / area;
     densidade2 = populacao2 / area2;
 
+    //calculo do super poder das cartas somando todas as caracteristacas mais o inverso da densidade(a menor densidade ganha)
+    superpoder = populacao + pturist + area + pib + pibpc - densidade;
+    superpoder2 = populacao2 + pturist2 + area2 + pib2 + pibpc2 - densidade2;
+    
 
     //transforma em texto todas as informações das cartas utilizando \n para pular linhas e seus especificadores
     printf("carta 1: \n");
@@ -76,10 +78,21 @@ int main(){ //Cria o diretório onde vai se passar todo o código
     printf("Nome da cidade - %s\n", nomec2);
     printf("População da Cidade - %d\n", populacao2);
     printf("Pontos turisticos - %d\n", pturist2);
-    printf("Área(km2) - %.2f km2\n", area);
+    printf("Área(km2) - %.2f km2\n", area2);
     printf("PIB - %.2f Bilhões de reais\n", pib2);
     printf("PIB per Capita - %.2f reais\n", pibpc2);
     printf("Densidade Populacional - %.2f habitantes/km2\n", densidade2);
+
+
+    //comparação das cartas
+    printf("população: %d\n", populacao > populacao2);
+    printf("Área: %d\n", area > area2);
+    printf("PIB: %d\n", pib > pib2);
+    printf("Pontos turisticos: %d\n", pturist > pturist2);
+    printf("Densidade Populacional: %d\n", densidade > densidade2);
+    printf("PIB per Capita: %d\n", pibpc > pibpc2);
+    printf("Superpoder: %d\n", superpoder1 > superpoder2);
+
 
     return 0; //sinalizar que o código foi finalizado com sucesso
 }
